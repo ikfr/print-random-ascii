@@ -1,5 +1,5 @@
 [package]
-name = "print_random_ascii"
+name = "print-random-ascii"
 version = "0.1.0"
 authors = ["hzqd <hzqelf@yeah.net>"]
 edition = "2018"
