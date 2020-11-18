@@ -27,7 +27,7 @@ fn main() {
     loop {
         println!("Please input the size you want to generate:");
         String::new()
-            .also_mut(|mut s| { stdin().read_line(&mut s).unwrap(); })
+            .also_mut(|s| { stdin().read_line(s).unwrap(); })
             .trim_end().parse::<usize>().unwrap()
             .let_owned(|x| print_random_ascii(x));
         print!("\n");
