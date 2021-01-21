@@ -2,12 +2,8 @@ use rand::{thread_rng, Rng};
 use std::io::stdin;
 
 fn print_random_ascii(n: usize) {
-    let mut tmp = 0;
-    while tmp != n {
-        print!("{}", thread_rng().gen_range(33u8, 127) as char);
-        tmp += 1;
-    }
-    print!("\n");
+    (0..n).for_each(|_| print!("{}", thread_rng().gen_range(33u8, 127) as char));
+    println!();
 }
 
 trait KtStd {
@@ -30,6 +26,6 @@ fn main() {
             .also_mut(|s| { stdin().read_line(s).unwrap(); })
             .trim_end().parse::<usize>().unwrap()
             .let_owned(|x| print_random_ascii(x));
-        print!("\n");
+        println!();
     }
 }
